@@ -1,0 +1,16 @@
+nav.navbar {
+    background-color: #fd7e14;
+    height: 5rem;
+    box-shadow: 2px 2px 5px rgb(131, 131, 131);
+}
+
+nav.navbar a {
+    /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Courier, monospace;
+    font-weight: bold;
+}
+
+.logo1{
+    width: 100%;
+    border-radius: 1rem;
+}
