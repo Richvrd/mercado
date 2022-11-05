@@ -5,7 +5,7 @@
     <!-- Bienvenida -->
     <div class="container">
         <div class="row" style="margin-top: 5rem;">
-            <div class="col-sm-12 col-md-4" style="margin-top: 8rem;">
+            <div class="col-sm-12 col-md-4" style="margin-top: 10rem;">
                 <h1 class="text-center">Bienvenido a Mercado Proveedores</h1>
                 <p class="text-center">Todo lo que necesites con las mejores opciones</p>
                 <div style="margin-left: 5rem;">
@@ -22,9 +22,43 @@
     <!-- Fin Bienvenida -->
 
     <!-- Contenido -->
-    <div style="height: 10rem;">
-        <h1 class="text-center" style="margin-top: 5rem;">Contenido</h1>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="card me-2" style="width: 18rem;">
+                <img src="{!! asset('imagenes/prod1.webp') !!}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Polera de Algodón</h5>
+                    <p class="card-text">Esta es la descripcion de la polera de algodon blanca</p>
+                    <a href="catalogo" class="btn btn-primary">Ver Catalogo</a>
+                </div>
+            </div>
+            <div class="card me-2" style="width: 18rem;">
+                <img src="{!! asset('imagenes/prod2.webp') !!}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Bebida Coca-Cola</h5>
+                    <p class="card-text">Esta es la descripcion de la bebida coca-cola</p>
+                    <a href="catalogo" class="btn btn-primary">Ver Catalogo</a>
+                </div>
+            </div>
+            <div class="card me-2" style="width: 18rem;">
+                <img src="{!! asset('imagenes/prod3.webp') !!}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Carcasa Iphone 11</h5>
+                    <p class="card-text">Esta es la descripcion de la carcasa del Iphone11</p>
+                    <a href="catalogo" class="btn btn-primary">Ver Catalogo</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="{!! asset('imagenes/prod4.webp') !!}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Hamburguesa</h5>
+                    <p class="card-text">Esta es la descripción de la hamburguesa</p>
+                    <a href="catalogo" class="btn btn-primary">Ver Catalogo</a>
+                </div>
+            </div>
+        </div>
     </div>
+    
     <!-- Fin Contenido -->
 
     {{View::make('Templates.footer')}}

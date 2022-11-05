@@ -8,3 +8,17 @@ nav.navbar a {
     width: 100%;
     border-radius: 1rem;
 }
+
+.thumbnail { 
+    position: relative; 
+} 
+.caption { 
+    position: absolute; 
+    top: 10%; 
+    left: 0; 
+    width: 100%; 
+}
+
+#foto{
+    filter: brightness(40%);
+}

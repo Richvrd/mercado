@@ -15,16 +15,21 @@
 <!-- Barra Navegador -->
 <nav class="navbar navbar-expand-lg" style="background-color: #fd7e14;height: 5rem;box-shadow: 2px 2px 5px rgb(131, 131, 131);">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Mercado de Proveedores</a>
+            <a class="navbar-brand" href="/"><img class="w-25 ms-5" src="{!! asset('imagenes/logoEmpresa.png') !!}" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                    <!-- <a class="nav-link active" aria-current="page" href="/">Inicio</a>
                     <a class="nav-link" href="#">Quienes Somos</a>
                     <a class="nav-link" href="#">Proveedores</a>
-                    <a class="nav-link" href="#">Preguntas Frecuentes</a>
+                    <a class="nav-link" href="#">Preguntas Frecuentes</a> -->
+                    <div style="margin-right: 5rem;">
+                        <i class="bi bi-person" style="font-size: 1.8rem;"></i>
+                        <i class="bi bi-cart ms-4" style="font-size: 1.8rem;"></i>
+                        <i class="bi bi-heart-fill ms-4" style="font-size: 1.8rem;"></i>
+                    </div>
                 </div>
             </div>
         </div>

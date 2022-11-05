@@ -56,6 +56,9 @@ Route::get('/actualizarProv', function () {
 Route::get('/eliminarProv', function () {
     return view('admin/proveedor/eliminarProv');
 });
+Route::get('/vistaProv', function () {
+    return view('vistaProv');
+});
 
 // PRODUCTO
 Route::get('/productos', function () {
@@ -65,7 +68,14 @@ Route::get('/eliminarProd', function () {
     return view('admin/productos/eliminarProd');
 });
 
-
+// CONTACTO
 Route::get('/contactos', function () {
     return view('admin/contactos');
 });
+
+// CATALOGO
+Route::get('/catalogo', function () {
+    return view('catalogo');
+});
+
+
