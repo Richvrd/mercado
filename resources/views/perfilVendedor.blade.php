@@ -1,15 +1,18 @@
+@extends('master')
+@section('content')
+
 {{View::make('Templates.header')}}
 
 <section class="py-5 my-5">
     <div class="container">
-        <h1 class="mb-5">Perfil Comprador</h1>
+        <h1 class="mb-5">Perfil Vendedor</h1>
         <div class="bg-white shadow rounded-lg d-block d-sm-flex">
             <div class="profile-tab-nav border-right p-md-5">
                 <div class="p-4">
                     <div class="img-circle text-center mb-3">
                         <img src="imagenes/user.png" alt="Image" class="shadow" style="width: 10rem;">
                     </div>
-                    <h4 class="text-center">Roberto Valenzuela Henríquez</h4>
+                    <h4 class="text-center">Alberto Valdivia Miguel</h4>
                 </div>
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
@@ -29,20 +32,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Rut</label>
-                                <input type="text" class="form-control" value="20.000.000-1" disabled>
+                                <label>Rut Empresa</label>
+                                <input type="text" class="form-control" value="25.000.000-1" disabled>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Nombre</label>
-                                <input type="text" class="form-control" value="Roberto" disabled>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Apellido</label>
-                                <input type="text" class="form-control" value="Valenzuela Henríquez" disabled>
+                                <label>Nombre Marca</label>
+                                <input type="text" class="form-control" value="Maui" disabled>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -60,19 +57,24 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Dirección Local</label>
-                                <input type="text" class="form-control" value="Dirección local Roberto">
+                                <input type="text" class="form-control" value="Dirección local Alberto">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Preferencia Productos</label>
-                                <input type="text" class="form-control" value="Ropa de Vestir">
+                                <label>Productos a Comerciar</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option disabled>Seleccione Tipo Producto</option>
+                                    <option selected value="1">Tecnología</option>
+                                    <option value="2">Vestuario</option>
+                                    <option value="3">Alimentos</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Descripción</label>
-                                <textarea class="form-control" rows="4">Tengo una pequeña tienda de ropa</textarea>
+                                <textarea class="form-control" rows="4">Nuestro nombre proviene de la icónica isla de Maui, Hawaii, donde se inicio el surf y están las playas con las mejores olas del mundo. Sin embargo, la leyenda de Maui and Sons comienza, irónicamente, con la fabricación de una galleta de chocolate en el continente americano. Más precisamente en el barrio de Newport Beach, al sur de California, a un par de metros de distancia del oceano pacífico. Fue aquí donde, en 1980, tres amantes del surf deciden comenzar una compañía de galletas de chispas de chocolate, “Maui’s Chocolate Chip Cookies”.</textarea>
                             </div>
                         </div>
                     </div>
@@ -116,5 +118,6 @@
     </div>
 </section>
 
-
 {{View::make('Templates.footer')}}
+
+@endsection

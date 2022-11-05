@@ -59,6 +59,9 @@ Route::get('/eliminarProv', function () {
 Route::get('/vistaProv', function () {
     return view('vistaProv');
 });
+Route::get('/perfilVendedor', function () {
+    return view('perfilVendedor');
+});
 
 // PRODUCTO
 Route::get('/productos', function () {
