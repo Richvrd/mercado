@@ -32,55 +32,58 @@ Route::get('/logout', [LogoutController::class,'logout']);
 Route::get('/perfil', function () {
     return view('perfil');
 });
+Route::get('productos', function () {
+    return view('productos');
+});
 
 Route::get('/admin', function () {
     return view('admin/admin');
 });
 
 // COMPRADOR
-Route::get('/compradores', function () {
+Route::get('admin/compradores', function () {
     return view('admin/comprador/compradores');
 });
-Route::get('/registrarComp', function () {
+Route::get('admin/registrarComp', function () {
     return view('admin/comprador/registrarComp');
 });
-Route::get('/actualizarComp', function () {
+Route::get('admin/actualizarComp', function () {
     return view('admin/comprador/actualizarComp');
 });
-Route::get('/eliminarComp', function () {
+Route::get('admin/eliminarComp', function () {
     return view('admin/comprador/eliminarComp');
 });
 
 // PROVEEDOR
-Route::get('/proveedores', function () {
+Route::get('admin/proveedores', function () {
     return view('admin/proveedor/proveedores');
 });
-Route::get('/registrarProv', function () {
+Route::get('admin/registrarProv', function () {
     return view('admin/proveedor/registrarProv');
 });
-Route::get('/actualizarProv', function () {
+Route::get('admin/actualizarProv', function () {
     return view('admin/proveedor/actualizarProv');
 });
-Route::get('/eliminarProv', function () {
+Route::get('admin/eliminarProv', function () {
     return view('admin/proveedor/eliminarProv');
 });
-Route::get('/vistaProv', function () {
+Route::get('admin/vistaProv', function () {
     return view('vistaProv');
 });
-Route::get('/perfilVendedor', function () {
+Route::get('admin/perfilVendedor', function () {
     return view('perfilVendedor');
 });
 
 // PRODUCTO
-Route::get('/productos', function () {
+Route::get('admin/productos', function () {
     return view('admin/productos/productos');
 });
-Route::get('/eliminarProd', function () {
+Route::get('admin/eliminarProd', function () {
     return view('admin/productos/eliminarProd');
 });
 
 // CONTACTO
-Route::get('/contactos', function () {
+Route::get('admin/contactos', function () {
     return view('admin/contactos');
 });
 
