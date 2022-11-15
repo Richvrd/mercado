@@ -22,3 +22,8 @@ nav.navbar a {
 #foto{
     filter: brightness(40%);
 }
+
+#btn-nav{
+    font-size: 1.8rem;
+    color: black;
+}

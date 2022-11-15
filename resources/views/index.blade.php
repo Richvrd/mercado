@@ -2,6 +2,7 @@
 @section('content')
 
     {{View::make('Templates.header')}}
+    @guest
     <!-- Bienvenida -->
     <div class="container">
         <div class="row" style="margin-top: 5rem;">
@@ -20,6 +21,22 @@
         </div>
     </div>
     <!-- Fin Bienvenida -->
+    @endguest
+
+    @auth
+    <div class="container">
+        <div class="row" style="margin-top: 5rem;">
+            <div class="col-sm-12 col-md-4" style="margin-top: 10rem;">
+                <h1 class="text-center">Bienvenido a Mercado Proveedores</h1>
+                <p class="text-center">Todo lo que necesites con las mejores opciones</p>
+                <h4 class="text-center">¡Hola {{Auth::user()->name}}!</h4>
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <img class="logo1" src="{!! asset('imagenes/logo1.png') !!}">
+            </div>
+        </div>
+    </div>
+    @endauth
 
     <!-- Contenido -->
     <div class="container mt-5 mb-5">

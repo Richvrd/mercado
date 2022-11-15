@@ -26,9 +26,12 @@
                     <a class="nav-link" href="#">Proveedores</a>
                     <a class="nav-link" href="#">Preguntas Frecuentes</a> -->
                     <div style="margin-right: 5rem;">
-                        <i class="bi bi-person" style="font-size: 1.8rem;"></i>
-                        <i class="bi bi-cart ms-4" style="font-size: 1.8rem;"></i>
-                        <i class="bi bi-heart-fill ms-4" style="font-size: 1.8rem;"></i>
+                        @auth
+                        <a href="#" id="btn-nav" class="bi bi-person"></a>
+                        <a href="#" id="btn-nav" class="bi bi-cart ms-4"></a>
+                        <a href="#" id="btn-nav" class="bi bi-heart-fill ms-4"></a>
+                        <a href="/logout" id="btn-nav" class="bi bi-box-arrow-right ms-4"></a>                    
+                        @endauth
                     </div>
                 </div>
             </div>

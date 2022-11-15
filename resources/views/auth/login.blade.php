@@ -1,16 +1,18 @@
 {{View::make('Templates.header')}}
 
-<form class="container" style="width: 20rem;margin-top:5rem;">
+<form method="POST" action="/login" class="container" style="width: 20rem;margin-top:5rem;">
+    @csrf
     <h1 class="text-center" style="margin-bottom: 2rem;">Iniciar Sesión</h1>
+    @include('mensajes')
     <!-- Email input -->
-    <div class="form-outline mb-2">
-        <input type="email" id="form2Example1" class="form-control" />
+    <div class="form-floating mb-3">
+        <input type="text" placeholder="Rut" name="rut" id="form2Example1" class="form-control" />
         <label class="form-label" for="form2Example1">Rut</label>
     </div>
 
     <!-- Password input -->
-    <div class="form-outline mb-2">
-        <input type="password" id="form2Example2" class="form-control" />
+    <div class="form-floating mb-3">
+        <input type="password" placeholder="Contraseña" name="password" id="form2Example2" class="form-control" />
         <label class="form-label" for="form2Example2">Contraseña</label>
     </div>
 
@@ -31,11 +33,11 @@
     </div>
 
     <!-- Submit button -->
-    <button type="button" class="btn btn-primary btn-block mb-4" style="margin-left: 6rem;">Ingresar</button>
+    <button type="submit" class="btn btn-primary btn-block mb-4" style="margin-left: 6rem;">Ingresar</button>
 
     <!-- Register buttons -->
     <div class="text-center" style="margin-bottom: 2rem;">
-        <p>¿No estás Registrado? <a href="#!">Registrarse</a></p>
+        <p>¿No estás Registrado? <a href="/registrarse">Registrarse</a></p>
         <p>o inicia sesión con:</p>
         <button type="button" class="btn btn-link btn-floating mx-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="30" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
