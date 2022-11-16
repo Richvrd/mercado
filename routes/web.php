@@ -3,6 +3,7 @@
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,9 +33,12 @@ Route::get('/logout', [LogoutController::class,'logout']);
 Route::get('/perfil', function () {
     return view('perfil');
 });
-Route::get('productos', function () {
-    return view('productos');
-});
+
+// PRODCUTO
+// Route::get('/producto/indexProd', [ProductoController::class,'index']);
+// Route::get('/producto/create', [ProductoController::class,'create']);
+
+Route::resource('producto',ProductoController::class);
 
 Route::get('/admin', function () {
     return view('admin/admin');
