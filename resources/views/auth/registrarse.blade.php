@@ -38,7 +38,10 @@
             <label class="form-label" for="form2Example2">Dirección</label>
         </div>
 
-        <button type="submit" class="btn btn-primary">Registrarse</button>
+        <div class="col-12 d-flex justify-content-center">
+            <a href="/" class="btn btn-outline-secondary me-2">Volver</a>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+        </div>
     </form>
 </div>
 
