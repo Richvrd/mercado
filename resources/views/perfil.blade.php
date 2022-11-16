@@ -1,6 +1,6 @@
 {{View::make('Templates.header')}}
 
-<section class="py-5 my-5">
+<section class="py-5 my-5" >
     <div class="container">
         <h1 class="mb-5">Perfil Comprador</h1>
         <div class="bg-white shadow rounded-lg d-block d-sm-flex">
@@ -9,7 +9,7 @@
                     <div class="img-circle text-center mb-3">
                         <img src="imagenes/user.png" alt="Image" class="shadow" style="width: 10rem;">
                     </div>
-                    <h4 class="text-center">Roberto Valenzuela Henríquez</h4>
+                    <h4 class="text-center">{{Auth::user()->name}}</h4>
                 </div>
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
@@ -26,41 +26,45 @@
             <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
                     <h3 class="mb-4">Configuración de Cuenta</h3>
+                    <form action="" method="POST">
+                    @csrf 
                     <div class="row">
                         <div class="col-md-6">
+                            
                             <div class="form-group">
                                 <label>Rut</label>
-                                <input type="text" class="form-control" value="20.000.000-1" disabled>
+                                <input type="text" class="form-control" value="{{Auth::user()->rut}}" disabled>
+                                
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control" value="Roberto" disabled>
+                                <input type="text" class="form-control" value="{{Auth::user()->name}}" disabled>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Apellido</label>
-                                <input type="text" class="form-control" value="Valenzuela Henríquez" disabled>
+                                <label >Apellido</label>
+                                <input type="text"  class="form-control" value="" disabled>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Correo</label>
-                                <input type="text" class="form-control" value="correo1@gmail.com">
+                                <label for="email">Correo</label>
+                                <input type="text" id="email" class="form-control" value="{{Auth::user()->email}}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Telefono</label>
-                                <input type="text" class="form-control" value="+91 9876543215">
+                                <label for="phone">Telefono</label>
+                                <input type="text" id="phone" class="form-control" value="{{Auth::user()->phone}}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Dirección Local</label>
-                                <input type="text" class="form-control" value="Dirección local Roberto">
+                                <label for="address">Dirección Local</label>
+                                <input type="text" id="address" class="form-control" value="{{Auth::user()->address}}">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -76,8 +80,12 @@
                             </div>
                         </div>
                     </div>
+                    </form>
+                        
                     <div>
-                        <button class="btn btn-primary mt-2">Actualizar</button>
+                
+                        <a class="btn btn-primary" href="">Actualizar</a>
+                        <a href=""> ACTUALIZAR OTRA FORMA</a>
                         <button class="btn btn-light mt-2">Cancelar</button>
                     </div>
                 </div>

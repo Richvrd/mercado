@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Expr\FuncCall;
 
 class LoginController extends Controller
 {
@@ -29,5 +31,11 @@ class LoginController extends Controller
 
     public function authenticated(Request $request,$user){
         return redirect('/');
+    }
+    public function edit($user){
+        return $user;
+    }
+    public function update(){
+        return 'editado';
     }
 }

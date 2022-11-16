@@ -18,20 +18,22 @@ use Illuminate\Support\Facades\Route;
 
 // AUTH
 Route::get('/registrarse', [RegisterController::class,'show'] );
-Route::post('/registrarse', [RegisterController::class,'register'] );
+Route::post('/registrarse', [RegisterController::class,'register']);
 
 Route::get('/login', [LoginController::class,'show']);
 Route::post('/login', [LoginController::class,'login']);
+
+//Route::get('/perfil',[LoginController::class,'edit']);
 
 // HOME
 Route::get('/', function () {return view('index');});
 
 Route::get('/logout', [LogoutController::class,'logout']);
 
+Route::patch('/perfil/{user}', [LoginController::class,'update'])->name('update');
 
-Route::get('/perfil', function () {
-    return view('perfil');
-});
+
+Route::get('/perfil', function () {    return view('perfil');});
 
 Route::get('/admin', function () {
     return view('admin/admin');
