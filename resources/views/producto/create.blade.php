@@ -5,8 +5,12 @@
 
     <div class="container mt-5 mb-5 w-50">
         <h1 class="text-center mb-3">Ingrese el Producto</h1>
-        <form action="/producto" method="POST" class="row g-3">
+        <form action="/producto" method="POST" class="row g-3" enctype="multipart/form-data">
             @csrf
+            <div class="col-6">
+                <label for="provInput" class="from-label">Proveedor</label>
+                <input type="text" class="form-control" name="proveedor" id="provInput">
+            </div>
             <div class="col-6">
                 <label for="tituloInput" class="from-label">Titulo</label>
                 <input type="text" class="form-control" name="titulo" id="tituloInput">
@@ -22,6 +26,10 @@
             <div class="col-6">
                 <label for="cantidadInput" class="from-label">Cantidad</label>
                 <input type="text" class="form-control" name="cantidad" id="cantidadInput">
+            </div>
+            <div class="col-6">
+                <label for="imagenInput" class="from-label">Imagen</label>
+                <input type="file" class="form-control" name="imagen" id="imagenInput">
             </div>
             <div class="col-12">
                 <label for="descInput" class="from-label">Descripcion</label>

@@ -76,4 +76,37 @@
     </tr>
   </tbody>
 </table>
+
+<!-- AGREGAR DESPUES
+
+<table class="table table-striped-columns mt-5">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre Proveedor</th>
+      <th scope="col">Titulo Producto</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Cantidades</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Imagen del Producto</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach ($productos as $producto)
+    <tr>
+      <td>{{ $producto->id }}</td>
+      <td>{{ $producto->proveedor }}</td>
+      <td>{{ $producto->titulo }}</td>
+      <td>{{ $producto->marca }}</td>
+      <td>{{ $producto->precio }}</td>
+      <td>{{ $producto->cantidad }}</td>
+      <td>{{ $producto->descripcion }}</td>
+      <td>{{ $producto->imagen }}</td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+
+ -->
 @endsection

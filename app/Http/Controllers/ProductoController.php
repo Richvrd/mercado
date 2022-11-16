@@ -14,7 +14,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return view('producto.indexProd');
+        $datos['productos'] = Producto::paginate(5);
+        return view('catalogo',$datos);
     }
 
     /**
@@ -36,7 +37,12 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         //$datosProducto = request()->all(); //Muestra todos los datos
-        $datosProducto = request()->except('_token');
+        $datosProducto = request()->except('_token');   //Muestra todos los datos exepto "_token" para agregarlos a la BD
+
+        if($request->hasFile('imagen')){    //Agregar imagen a carpeta uploads de storage
+            $datosProducto['imagen'] = $request->file('imagen')->store('uploads','public');
+        }
+
         Producto::insert($datosProducto);
         return response()->json($datosProducto);
     }
