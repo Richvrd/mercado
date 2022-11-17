@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
@@ -24,7 +26,7 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(LoginRequest $request)
     {
         return view('producto.create');
     }
@@ -45,7 +47,8 @@ class ProductoController extends Controller
         }
 
         Producto::insert($datosProducto);
-        return response()->json($datosProducto);
+        // return response()->json($datosProducto);
+        return redirect('producto')->with('success','Producto ingresado');
     }
 
     /**
@@ -101,7 +104,14 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        Producto::destroy($id);
-        return redirect('producto');
+        $producto = Producto::findOrFail($id);
+
+        if(Storage::delete('public/'.$producto->imagen)){
+            Producto::destroy($id);
+        }
+
+        
+        
+        return redirect('producto')->with('success','Producto '.$producto->titulo.' Borrado');
     }
 }
