@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
@@ -15,7 +16,7 @@ class ProductoController extends Controller
     public function index()
     {
         $datos['productos'] = Producto::paginate(5);
-        return view('catalogo',$datos);
+        return view('producto.indexProd',$datos);
     }
 
     /**
@@ -64,9 +65,10 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function edit($id)
     {
-        //
+        $producto = Producto::findOrFail($id);
+        return view('producto.edit',compact('producto'));
     }
 
     /**
@@ -76,10 +78,20 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Producto $producto)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $datosProducto = request()->except(['_token','_method']);
+
+        if($request->hasFile('imagen')){    //Agregar imagen a carpeta uploads de storage
+            $producto = Producto::findOrFail($id);
+            Storage::delete('public/'.$producto->imagen);
+            $datosProducto['imagen'] = $request->file('imagen')->store('uploads','public');
+        }
+
+        Producto::where('id','=',$id)->update($datosProducto);
+        $producto = Producto::findOrFail($id);
+        return view('producto.edit',compact('producto'));
+    }   
 
     /**
      * Remove the specified resource from storage.
@@ -87,8 +99,9 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Producto $producto)
+    public function destroy($id)
     {
-        //
+        Producto::destroy($id);
+        return redirect('producto');
     }
 }

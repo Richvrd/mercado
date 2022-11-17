@@ -17,6 +17,7 @@
                 <th>Cantidad</th>
                 <th>Descripcion</th>
                 <th>Imagen</th>
+                <th>Acciones</th>
             </tr>
         </thead>
 
@@ -30,7 +31,19 @@
                     <td>{{ $producto->precio }}</td>
                     <td>{{ $producto->cantidad }}</td>
                     <td>{{ $producto->descripcion }}</td>
-                    <td>{{ $producto->imagen }}</td>
+                    <td>
+                        <img src="{{ asset('storage').'/'.$producto->imagen }}" width="100" alt="">
+                    </td>
+                    <td>
+                    
+                    <a href="{{ url('/producto/'.$producto->id.'/edit') }}">Editar</a>
+
+                    <form action="{{ url('/producto/'.$producto->id) }}" method="POST">
+                        @csrf
+                        {{ method_field('DELETE') }}
+                        <input type="submit" onclick="return confirm('¿Borrar Producto?')" value="Borrar">
+                    </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

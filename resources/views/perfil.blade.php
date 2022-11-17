@@ -81,6 +81,7 @@
                         <button class="btn btn-light mt-2">Cancelar</button>
                     </div>
                 </div>
+<!-- Password Section -->
                 <div class="tab-pane fade" id="passwordd" role="tabpanel" aria-labelledby="password-tab">
                     <h3 class="mb-4">Password Settings</h3>
                     <div class="row">
@@ -116,5 +117,8 @@
     </div>
 </section>
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 {{View::make('Templates.footer')}}

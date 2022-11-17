@@ -37,7 +37,8 @@
                 <textarea name="descripcion" class="form-control" id="descInput" cols="30" rows="5"></textarea>
             </div>
 
-            <div class="col-12">
+            <div class="col-12 d-flex justify-content-center">
+                <a href="/producto" class="btn btn-outline-secondary me-2">Volver</a>
                 <button type="submit" class="btn btn-primary">Agregar</button>
             </div>
         </form>

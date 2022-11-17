@@ -39,6 +39,13 @@
     @endauth
 
     <!-- Contenido -->
+
+    <div>
+        <h1>Botones temporales</h1>
+        <a href="producto" class="btn btn-primary">Ver Productos</a>
+        <a href="producto/create" class="btn btn-primary">Crear Productos</a>
+    </div>
+
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="card me-2" style="width: 18rem;">
