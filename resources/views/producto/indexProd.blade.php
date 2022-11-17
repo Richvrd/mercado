@@ -48,6 +48,8 @@
             @endforeach
         </tbody>
     </table>
+    @include('mensajes')
+    <a href="producto/create" class="btn btn-primary mb-3">Agregar Producto</a>
     </div>
 
     {{View::make('Templates.footer')}}
