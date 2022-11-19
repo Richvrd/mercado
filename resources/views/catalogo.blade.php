@@ -18,41 +18,67 @@
 <!-- Contenido -->
 <div class="container mt-5 mb-5">
     <div class="row">
+        @foreach ( $productos as $producto )
         <div class="card me-2" style="width: 18rem;">
-            <img src="{!! asset('imagenes/prod1.webp') !!}" class="card-img-top" alt="...">
+            <img src="{{ asset('storage').'/'.$producto->imagen }}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Polera de Algodón</h5>
-                <p class="card-text">Esta es la descripcion de la polera de algodon blanca</p>
-                <a href="vistaProv" class="btn btn-primary">Ver Proveedor</a>
+                <h5 class="card-title">{{$producto['titulo']}}</h5>
+                <p class="card-text">{{$producto['descripcion']}}</p>
+                <a href="{{url('/producto/'.$producto->id)}}" class="btn btn-primary">Ver Proveedor</a>
             </div>
         </div>
-        <div class="card me-2" style="width: 18rem;">
-            <img src="{!! asset('imagenes/prod2.webp') !!}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Bebida Coca-Cola</h5>
-                <p class="card-text">Esta es la descripcion de la bebida coca-cola</p>
-                <a href="vistaProv" class="btn btn-primary">Ver Proveedor</a>
-            </div>
-        </div>
-        <div class="card me-2" style="width: 18rem;">
-            <img src="{!! asset('imagenes/prod3.webp') !!}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Carcasa Iphone 11</h5>
-                <p class="card-text">Esta es la descripcion de la carcasa del Iphone11</p>
-                <a href="vistaProv" class="btn btn-primary">Ver Proveedor</a>
-            </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-            <img src="{!! asset('imagenes/prod4.webp') !!}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Hamburguesa</h5>
-                <p class="card-text">Esta es la descripción de la hamburguesa</p>
-                <a href="vistaProv" class="btn btn-primary">Ver Proveedor</a>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 
+<h1>Aca se muestran los productos por mientras para ir agregando y tal</h1>
+
+<div class="container">
+<table class="table table-light">
+    <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th>Proveedor</th>
+            <th>Titulo</th>
+            <th>Marca</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Descripcion</th>
+            <th>Imagen</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach ($productos as $producto)
+            <tr>
+                <td>{{ $producto->id }}</td>
+                <td>{{ $producto->proveedor }}</td>
+                <td>{{ $producto->titulo }}</td>
+                <td>{{ $producto->marca }}</td>
+                <td>{{ $producto->precio }}</td>
+                <td>{{ $producto->cantidad }}</td>
+                <td>{{ $producto->descripcion }}</td>
+                <td>
+                    <img src="{{ asset('storage').'/'.$producto->imagen }}" width="100" alt="">
+                </td>
+                <td>
+                
+                <a href="{{ url('/producto/'.$producto->id.'/edit') }}">Editar</a>
+
+                <form action="{{ url('/producto/'.$producto->id) }}" method="POST">
+                    @csrf
+                    {{ method_field('DELETE') }}
+                    <input type="submit" onclick="return confirm('¿Borrar Producto?')" value="Borrar">
+                </form>
+                </td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
+@include('mensajes')
+<a href="producto/create" class="btn btn-primary mb-3">Agregar Producto</a>
+</div>
 
 
 {{View::make('Templates.footer')}}

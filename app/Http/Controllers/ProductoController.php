@@ -18,7 +18,7 @@ class ProductoController extends Controller
     public function index()
     {
         $datos['productos'] = Producto::paginate(5);
-        return view('producto.indexProd',$datos);
+        return view('catalogo',$datos);
     }
 
     /**
@@ -26,7 +26,7 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(LoginRequest $request)
+    public function create()
     {
         return view('producto.create');
     }
@@ -57,9 +57,10 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function show(Producto $producto)
+    public function show($id)
     {
-        //
+        $data = Producto::findOrFail($id);
+        return view('vistaProv',['producto'=>$data]);
     }
 
     /**

@@ -53,7 +53,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Polera de Algodón</h5>
                     <p class="card-text">Esta es la descripcion de la polera de algodon blanca</p>
-                    <a href="catalogo" class="btn btn-primary">Ver Catalogo</a>
+                    <a href="producto" class="btn btn-primary">Ver Catalogo</a>
                 </div>
             </div>
             <div class="card me-2" style="width: 18rem;">

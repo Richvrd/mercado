@@ -71,7 +71,7 @@ Route::get('admin/actualizarProv', function () {
 Route::get('admin/eliminarProv', function () {
     return view('admin/proveedor/eliminarProv');
 });
-Route::get('admin/vistaProv', function () {
+Route::get('/vistaProv', function () {
     return view('vistaProv');
 });
 Route::get('admin/perfilVendedor', function () {
