@@ -4,6 +4,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,10 +44,13 @@ Route::post('/añadir_carrito', [ProductoController::class,'añadirCarrito']);
 Route::get('/lista_carrito', [ProductoController::class,'listaCarrito']);
 Route::get('/quitar_carrito/{id}', [ProductoController::class,'quitarCarrito']);
 
+Route::get('perfil',[UserController::class,'show']);
+
 
 Route::get('/admin', function () {
     return view('admin/admin');
 });
+
 
 // COMPRADOR
 Route::get('admin/compradores', function () {

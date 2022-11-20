@@ -9,7 +9,7 @@
                     <div class="img-circle text-center mb-3">
                         <img src="imagenes/user.png" alt="Image" class="shadow" style="width: 10rem;">
                     </div>
-                    <h4 class="text-center">Roberto Valenzuela Henríquez</h4>
+                    <h4 class="text-center">{{ Auth::user()->name }}</h4>
                 </div>
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
@@ -30,37 +30,37 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Rut</label>
-                                <input type="text" class="form-control" value="20.000.000-1" disabled>
+                                <input type="text" class="form-control" value="{{ Auth::user()->rut }}" disabled>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control" value="Roberto" disabled>
+                                <input type="text" class="form-control" value="{{ Auth::user()->name }}" disabled>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Apellido</label>
-                                <input type="text" class="form-control" value="Valenzuela Henríquez" disabled>
+                                <input type="text" class="form-control" value="{{ Auth::user()->lastname }}" disabled>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Correo</label>
-                                <input type="text" class="form-control" value="correo1@gmail.com">
+                                <input type="text" class="form-control" value="{{ Auth::user()->email }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Telefono</label>
-                                <input type="text" class="form-control" value="+91 9876543215">
+                                <input type="text" class="form-control" value="{{ Auth::user()->phone }}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Dirección Local</label>
-                                <input type="text" class="form-control" value="Dirección local Roberto">
+                                <input type="text" class="form-control" value="{{ Auth::user()->address }}">
                             </div>
                         </div>
                         <div class="col-md-6">

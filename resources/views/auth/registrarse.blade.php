@@ -22,7 +22,7 @@
             <label class="form-label" for="form2Example2">Nombre</label>
         </div>
         <div class="col-6 form-floating">
-            <input type="text" placeholder="Apellido" name="last-name" id="form2Example2" class="form-control" />
+            <input type="text" placeholder="Apellido" name="lastname" id="form2Example2" class="form-control" />
             <label class="form-label" for="form2Example2">Apellido</label>
         </div>
         <div class="col-6 form-floating">

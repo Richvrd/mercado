@@ -18,6 +18,7 @@
 <!-- Contenido -->
 <div class="container mt-5 mb-5">
     <div class="row">
+        @include('mensajes')
         @foreach ( $productos as $producto )
         <div class="card me-2" style="width: 18rem;">
             <img src="{{ asset('storage').'/'.$producto->imagen }}" class="card-img-top" alt="...">

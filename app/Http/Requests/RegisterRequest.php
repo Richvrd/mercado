@@ -26,7 +26,7 @@ class RegisterRequest extends FormRequest
         return [
             'rut' => 'required|unique:users,rut',
             'name' => 'required',
-            'last-name' => 'required',
+            'lastname' => 'required',
             'email' => 'required|unique:users,email',
             'phone' => 'required',
             'address' => 'required',
