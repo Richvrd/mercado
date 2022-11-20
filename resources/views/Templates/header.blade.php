@@ -3,7 +3,7 @@
     $total = ProductoController::itemCarrito();
 
 ?>
-
+@extends('master')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +16,8 @@
     <!-- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 </head>
 <body>
 <!-- Barra Navegador -->
@@ -33,10 +35,18 @@
                     <a class="nav-link" href="#">Preguntas Frecuentes</a> -->
                     <div style="margin-right: 5rem;">
                         @auth
-                        <a href="/perfil" id="btn-nav" class="bi bi-person"><h4 class="d-inline" style="font-weight: lighter;">{{ Auth::user()->name }}</h4></a>
                         <a href="/lista_carrito" id="btn-nav" class="bi bi-cart ms-4"><h4 class="d-inline" style="font-weight: lighter;">({{ $total }})</h4></a>
-                        <a href="#" id="btn-nav" class="bi bi-heart-fill ms-4"></a>
-                        <a href="/logout" id="btn-nav" class="bi bi-box-arrow-right ms-4"></a>                    
+                        <li class="nav-item dropdown d-inline">
+                            <a class="nav-link dropdown-toggle d-inline" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <h4 class="bi bi-person d-inline" style="font-weight: lighter;color: black;">{{ Auth::user()->name }}</h4>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="mis_ordenes">Mis Ordenes</a></li>
+                                <li><a class="dropdown-item" href="/perfil">Perfil</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="/logout">Cerrar Sesión</a></li>
+                            </ul>
+                        </li>                    
                         @endauth
                     </div>
                 </div>

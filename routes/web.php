@@ -38,12 +38,17 @@ Route::get('/perfil', function () {
 // PRODCUTO
 // Route::get('/producto/indexProd', [ProductoController::class,'index']);
 // Route::get('/producto/create', [ProductoController::class,'create']);
-
 Route::resource('producto',ProductoController::class);
+
+//CARRITO Y ORDEN
 Route::post('/añadir_carrito', [ProductoController::class,'añadirCarrito']);
 Route::get('/lista_carrito', [ProductoController::class,'listaCarrito']);
 Route::get('/quitar_carrito/{id}', [ProductoController::class,'quitarCarrito']);
+Route::get('/ordenar_ahora', [ProductoController::class,'ordenarAhora']);
+Route::post('/lugar_pedido', [ProductoController::class,'lugarPedido']);
+Route::get('/mis_ordenes', [ProductoController::class,'misOrdenes']);
 
+//PERFIL USUARIO
 Route::get('perfil',[UserController::class,'show']);
 
 

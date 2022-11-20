@@ -39,7 +39,7 @@
     @endauth
 
     <!-- Contenido -->
-
+    @include('mensajes')
     <div>
         <h1>Botones temporales</h1>
         <a href="producto" class="btn btn-primary">Ver Productos</a>

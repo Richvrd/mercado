@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Models\Carrito;
+use App\Models\Orden;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -143,6 +144,9 @@ class ProductoController extends Controller
         }
     }
     public function listaCarrito(){
+        if(!Auth::check()){
+            return redirect('/login');
+        }
         $userId = Auth::user()->id;
         $productos = DB::table('carrito')
         ->join('productos','carrito.producto_id','=','productos.id')
@@ -155,5 +159,51 @@ class ProductoController extends Controller
     public function quitarCarrito($id){
         Carrito::destroy($id);
         return redirect('lista_carrito')->with('success','Producto quitado del carrito');
+    }
+
+    public function ordenarAhora(){
+        if(!Auth::check()){
+            return redirect('/login');
+        }
+        $userId = Auth::user()->id;
+        $total = $productos = DB::table('carrito')
+        ->join('productos','carrito.producto_id','=','productos.id')
+        ->where('carrito.user_id',$userId)
+        ->sum('productos.precio');
+
+        return view('ordenar_ahora',['total'=>$total]);
+    }
+    public function lugarPedido(Request $req){
+        if(!Auth::check()){
+            return redirect('/login');
+        }
+
+        $userId = Auth::user()->id;
+        $allCarrito = Carrito::where('user_id',$userId)->get();
+        foreach($allCarrito as $carrito){
+            $order = new Orden;
+            $order->producto_id = $carrito['producto_id'];
+            $order->user_id = $carrito['user_id'];
+            $order->metodo_pago = $req->metodo_pago;
+            $order->estado_pago = 'Pendiente';
+            $order->estado = 'Pendiente';
+            $order->direccion = $req->direccion;
+            $order->save();
+            Carrito::where('user_id',$userId)->delete();
+        }
+        
+        return redirect('/')->with('success','Pedido Realizado');
+    }
+    public function misOrdenes(){
+        if(!Auth::check()){
+            return redirect('/login');
+        }
+        $userId = Auth::user()->id;
+        $ordenes = DB::table('ordenes')
+        ->join('productos','ordenes.producto_id','=','productos.id')
+        ->where('ordenes.user_id',$userId)
+        ->get();
+
+        return view('mis_ordenes',['ordenes'=>$ordenes]);
     }
 }
