@@ -33,8 +33,8 @@
                     <a class="nav-link" href="#">Preguntas Frecuentes</a> -->
                     <div style="margin-right: 5rem;">
                         @auth
-                        <a href="/perfil" id="btn-nav" class="bi bi-person"></a>
-                        <a href="/lista_carrito" id="btn-nav" class="bi bi-cart ms-4">({{ $total }})</a>
+                        <a href="/perfil" id="btn-nav" class="bi bi-person"><h4 class="d-inline" style="font-weight: lighter;">{{ Auth::user()->name }}</h4></a>
+                        <a href="/lista_carrito" id="btn-nav" class="bi bi-cart ms-4"><h4 class="d-inline" style="font-weight: lighter;">({{ $total }})</h4></a>
                         <a href="#" id="btn-nav" class="bi bi-heart-fill ms-4"></a>
                         <a href="/logout" id="btn-nav" class="bi bi-box-arrow-right ms-4"></a>                    
                         @endauth
