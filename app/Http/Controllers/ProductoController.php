@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use App\Models\Carrito;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,9 +27,12 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $req)
     {
-        return view('producto.create');
+        if(Auth::check()){
+            return view('producto.create');
+        }
+        return redirect('/');
     }
 
     /**
@@ -71,8 +75,11 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        $producto = Producto::findOrFail($id);
-        return view('producto.edit',compact('producto'));
+        if(Auth::check()){
+            $producto = Producto::findOrFail($id);
+            return view('producto.edit',compact('producto'));
+        }
+        return redirect('/');
     }
 
     /**
@@ -105,14 +112,33 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        $producto = Producto::findOrFail($id);
+        if(Auth::check()){
+            $producto = Producto::findOrFail($id);
 
-        if(Storage::delete('public/'.$producto->imagen)){
-            Producto::destroy($id);
+            if(Storage::delete('public/'.$producto->imagen)){
+                Producto::destroy($id);
+            }
+
+            return redirect('producto')->with('success','Producto '.$producto->titulo.' Borrado');
         }
+        return redirect('/');
+    }
 
-        
-        
-        return redirect('producto')->with('success','Producto '.$producto->titulo.' Borrado');
+    public function añadirCarrito(Request $req){
+        if(Auth::check()){
+            $carrito = new Carrito();
+            $carrito->user_id = Auth::user()->id;
+            $carrito->producto_id = $req->producto_id;
+            $carrito->save();
+            return redirect('/');
+        }
+        return redirect('/login');
+    }
+
+    static function itemCarrito(){
+        if(Auth::check()){
+            $userId = Auth::user()->id;
+            return Carrito::where('user_id',$userId)->count();
+        }
     }
 }

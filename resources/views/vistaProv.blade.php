@@ -20,7 +20,11 @@
                         <h2>Descripción: </h2><h5>{{ $producto['descripcion'] }}</h5>
                         <h2>${{ $producto['precio'] }}</h2><input style="width: 5.2rem;border-radius: 1rem;" type="number" placeholder="cantidad">
                         <div class="mt-4">
-                            <a class="btn btn-primary">Añadir al Carrito<i class="bi bi-cart ms-2"></i></a>
+                            <form action="/añadir_carrito" method="POST">
+                                @csrf
+                                <input type="hidden" name="producto_id" value="{{ $producto->id }}">
+                                <button class="btn btn-primary">Añadir al Carrito</button>
+                            </form>
                             <a class="btn btn-info">Añadir Favoritos<i class="bi bi-heart ms-2"></i></a>
                         </div>
                     </div>

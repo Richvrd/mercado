@@ -1,3 +1,9 @@
+<?php
+    use App\Http\Controllers\ProductoController;
+    $total = ProductoController::itemCarrito();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +34,7 @@
                     <div style="margin-right: 5rem;">
                         @auth
                         <a href="/perfil" id="btn-nav" class="bi bi-person"></a>
-                        <a href="#" id="btn-nav" class="bi bi-cart ms-4"></a>
+                        <a href="#" id="btn-nav" class="bi bi-cart ms-4">{{ $total }}</a>
                         <a href="#" id="btn-nav" class="bi bi-heart-fill ms-4"></a>
                         <a href="/logout" id="btn-nav" class="bi bi-box-arrow-right ms-4"></a>                    
                         @endauth

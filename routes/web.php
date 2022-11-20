@@ -39,6 +39,8 @@ Route::get('/perfil', function () {
 // Route::get('/producto/create', [ProductoController::class,'create']);
 
 Route::resource('producto',ProductoController::class);
+Route::post('/añadir_carrito', [ProductoController::class,'añadirCarrito']);
+
 
 Route::get('/admin', function () {
     return view('admin/admin');
