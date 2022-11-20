@@ -7,6 +7,7 @@ use App\Models\Carrito;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
@@ -140,5 +141,19 @@ class ProductoController extends Controller
             $userId = Auth::user()->id;
             return Carrito::where('user_id',$userId)->count();
         }
+    }
+    public function listaCarrito(){
+        $userId = Auth::user()->id;
+        $productos = DB::table('carrito')
+        ->join('productos','carrito.producto_id','=','productos.id')
+        ->where('carrito.user_id',$userId)
+        ->select('productos.*','carrito.id as carrito_id')
+        ->get();
+
+        return view('lista_carrito',['productos'=>$productos]);
+    }
+    public function quitarCarrito($id){
+        Carrito::destroy($id);
+        return redirect('lista_carrito')->with('success','Producto quitado del carrito');
     }
 }

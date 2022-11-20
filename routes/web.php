@@ -40,6 +40,8 @@ Route::get('/perfil', function () {
 
 Route::resource('producto',ProductoController::class);
 Route::post('/añadir_carrito', [ProductoController::class,'añadirCarrito']);
+Route::get('/lista_carrito', [ProductoController::class,'listaCarrito']);
+Route::get('/quitar_carrito/{id}', [ProductoController::class,'quitarCarrito']);
 
 
 Route::get('/admin', function () {
