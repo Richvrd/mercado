@@ -10,7 +10,7 @@
                 <h1 class="text-center">Bienvenido a Mercado Proveedores</h1>
                 <p class="text-center">Todo lo que necesites con las mejores opciones</p>
                 <div style="margin-left: 5rem;">
-                    <a class="btn btn-outline-primary" href="login">Iniciar Sesión</a>
+                    <a class="btn btn-outline-primary" href="opcion_login">Iniciar Sesión</a>
                     <a class="btn btn-primary" href="registrarse">Registrarse</a>
                 </div>
                 

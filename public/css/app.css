@@ -28,3 +28,9 @@ nav.navbar a {
     font-size: 1.8rem;
     color: black;
 }
+
+#btn-grande{
+    text-decoration: none;
+    color: black;
+    padding: 5rem;
+}

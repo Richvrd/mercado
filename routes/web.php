@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 // AUTH
+
+Route::get('opcion_login',function(){return view('opcion_login');});
 Route::get('/registrarse', [RegisterController::class,'show'] );
 Route::post('/registrarse', [RegisterController::class,'register'] );
 
@@ -51,6 +53,13 @@ Route::get('/mis_ordenes', [ProductoController::class,'misOrdenes']);
 //PERFIL USUARIO
 Route::get('perfil',[UserController::class,'show']);
 
+//PROVEEDOR
+Route::get('login_proveedor',function(){
+    return view('proveedor/login_proveedor');
+});
+Route::get('registro_proveedor',function(){
+    return view('proveedor/registro_proveedor');
+});
 
 Route::get('/admin', function () {
     return view('admin/admin');
