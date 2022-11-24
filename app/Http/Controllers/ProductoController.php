@@ -31,7 +31,7 @@ class ProductoController extends Controller
      */
     public function create(Request $req)
     {
-        if(Auth::check()){
+        if(Auth::check() && Auth::user()->comp_o_emp==2){
             return view('producto.create');
         }
         return redirect('/');
@@ -77,7 +77,7 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        if(Auth::check()){
+        if(Auth::check() && Auth::user()->comp_o_emp==2){
             $producto = Producto::findOrFail($id);
             return view('producto.edit',compact('producto'));
         }
@@ -114,7 +114,7 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        if(Auth::check()){
+        if(Auth::check() && Auth::user()->comp_o_emp==2){
             $producto = Producto::findOrFail($id);
 
             if(Storage::delete('public/'.$producto->imagen)){

@@ -7,25 +7,23 @@
     <div class="thumbnail "> 
         <img class="img-fluid" id="foto" src="{!! asset('imagenes/tiendaRopa.jpg') !!}" style="opacity: 0.7;"> 
         <div class="caption">
-            <div class="container mt-5 mb-5">
+            <div class="container mt-3 mb-5">
                 <div class="row" style="height:30rem;">
                     <div class="col-md-3">
-                        <img src="{{ asset('storage').'/'.$producto->imagen }}" class="card-img-top" alt="..." style="margin-top: 2rem;">
+                        <img src="{{ asset('storage').'/'.$producto->imagen }}" class="card-img-top" alt="..." style="margin-top: 1rem;">
                     </div>
                     <div class="col-md-9" style="color: white;">
                         <h1>{{ $producto['titulo'] }}</h1>
-                        <br>
                         <h2>Proveedor: {{ $producto['proveedor'] }}</h2>
                         <h2>Marca: {{ $producto['marca'] }}</h2>
                         <h2>Descripción: </h2><h5>{{ $producto['descripcion'] }}</h5>
-                        <h2>${{ $producto['precio'] }}</h2><input style="width: 5.2rem;border-radius: 1rem;" type="number" placeholder="cantidad">
+                        <h2>${{ $producto['precio'] }}</h2>
                         <div class="mt-4">
                             <form action="/añadir_carrito" method="POST">
                                 @csrf
                                 <input type="hidden" name="producto_id" value="{{ $producto->id }}">
-                                <button class="btn btn-primary">Añadir al Carrito</button>
+                                <button class="btn btn-success">Añadir al Carrito</button>
                             </form>
-                            <a class="btn btn-info">Añadir Favoritos<i class="bi bi-heart ms-2"></i></a>
                         </div>
                     </div>
                     <div class="container">
@@ -51,9 +49,12 @@
                                 <p class="card-text">Me gusto la simplesa del diseño, no es muy llamativa y es elegante, como me gustan las poleras.</p>
                             </div>
                         </div>
-                        <div class="card mb-3">
-                            <textarea name="" id="" cols="20" rows="3" placeholder="Ingrese Comentario"></textarea>
-                        </div>
+                        @auth
+                            <div class="card mb-3">
+                                <textarea name="" id="" cols="20" rows="3" placeholder="Ingrese Comentario"></textarea>
+                            </div>
+                        @endauth
+                        
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@
 
 {{View::make('Templates.header')}}
 
-<form method="POST" action="" class="container" style="width: 20rem;margin-top:5rem;">
+<form method="POST" action="/login" class="container" style="width: 20rem;margin-top:5rem;">
     @csrf
     <h1 class="text-center" style="margin-bottom: 2rem;">Iniciar Sesión</h1>
     @include('mensajes')

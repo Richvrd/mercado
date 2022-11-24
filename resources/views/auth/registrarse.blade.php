@@ -37,6 +37,11 @@
             <input type="text" placeholder="Dirección" name="address" id="form2Example2" class="form-control" />
             <label class="form-label" for="form2Example2">Dirección</label>
         </div>
+        <div class="col-2">
+            <select class="form-control" name="comp_o_emp" id="">
+                <option selected value="1">Comprador</option>
+            </select>
+        </div>
 
         <div class="col-12 d-flex justify-content-center">
             <a href="/" class="btn btn-outline-secondary me-2">Volver</a>

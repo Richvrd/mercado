@@ -25,6 +25,10 @@
             <label class="form-label" for="form2Example2">Marca</label>
         </div>
         <div class="col-6 form-floating">
+            <input type="text" placeholder="Apellido" name="lastname" id="form2Example2" class="form-control" />
+            <label class="form-label" for="form2Example2">Productos a Comerciar</label>
+        </div>
+        <div class="col-6 form-floating">
             <input type="email" placeholder="Correo" name="email" id="form2Example2" class="form-control" />
             <label class="form-label" for="form2Example2">Correo</label>
         </div>
@@ -32,13 +36,14 @@
             <input type="text" placeholder="Telefono" name="phone" id="form2Example2" class="form-control" />
             <label class="form-label" for="form2Example2">Teléfono</label>
         </div>
-        <div class="col-6 form-floating">
-            <input type="text" placeholder="Apellido" name="lastname" id="form2Example2" class="form-control" />
-            <label class="form-label" for="form2Example2">Productos a Comerciar</label>
-        </div>
         <div class="col-12 form-floating">
             <input type="text" placeholder="Dirección" name="address" id="form2Example2" class="form-control" />
             <label class="form-label" for="form2Example2">Dirección</label>
+        </div>
+        <div class="col-2">
+            <select class="form-control" name="comp_o_emp" id="">
+                <option selected value="2">Proveedor</option>
+            </select>
         </div>
 
         <div class="col-12 d-flex justify-content-center">
