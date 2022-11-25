@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('proveedor_id')->unsigned();
+            // $table->bigInteger('proveedor_id')->unsigned();
             $table->string('proveedor');
             $table->string('titulo');
             $table->string('marca');
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('descripcion');
             $table->timestamps();
 
-            $table->foreign('proveedor_id')->references('id')->on('proveedores')->onDelete('cascade');
+            // $table->foreign('proveedor_id')->references('id')->on('proveedores')->onDelete('cascade');
         });
     }
 

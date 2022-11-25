@@ -1,7 +1,5 @@
-@extends('master')
+@extends('Admin.admin')
 @section('content')
-
-{{View::make('Templates.header')}}
 
 
 <form action="{{ url('/producto/'.$producto->id) }}" class="container mt-5 mb-5 w-50" method="POST" enctype="multipart/form-data">
@@ -50,9 +48,5 @@
     </form>
 </form>
 
-
-
-
-{{View::make('Templates.footer')}}
 
 @endsection

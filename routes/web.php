@@ -28,7 +28,9 @@ Route::get('/login', [LoginController::class,'show']);
 Route::post('/login', [LoginController::class,'login']);
 
 // HOME
-Route::get('/', function () {return view('index');});
+// Route::get('/', function () {return view('index');});
+Route::get('/', [ProductoController::class, 'home']);
+Route::get('catalogo', [ProductoController::class, 'catalogo']);
 
 Route::get('/logout', [LogoutController::class,'logout']);
 
@@ -41,6 +43,7 @@ Route::get('/perfil', function () {
 // Route::get('/producto/indexProd', [ProductoController::class,'index']);
 // Route::get('/producto/create', [ProductoController::class,'create']);
 Route::resource('producto',ProductoController::class);
+// Route::get('producto/index',ProductoController::class,'vista');
 
 //CARRITO Y ORDEN
 Route::post('/añadir_carrito', [ProductoController::class,'añadirCarrito']);

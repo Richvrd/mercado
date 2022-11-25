@@ -20,8 +20,13 @@ class ProductoController extends Controller
      */
     public function index()
     {
+        $datos['productos'] = Producto::all();
+        return view('admin.productos.productos',$datos);
+    }
+    public function home()
+    {
         $datos['productos'] = Producto::paginate(5);
-        return view('catalogo',$datos);
+        return view('index',$datos);
     }
 
     /**

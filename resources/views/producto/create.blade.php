@@ -1,7 +1,5 @@
-@extends('master')
+@extends('Admin.adminMaster')
 @section('content')
-
-    {{View::make('Templates.header')}}
 
     <div class="container mt-5 mb-5 w-50">
         <h1 class="text-center mb-3">Ingrese el Producto</h1>
@@ -44,7 +42,5 @@
         </form>
     </div>
 
-
-    {{View::make('Templates.footer')}}
 
 @endsection

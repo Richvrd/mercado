@@ -6,16 +6,15 @@
     <!-- Bienvenida -->
     <div class="container">
         <div class="row" style="margin-top: 5rem;">
-            <div class="col-sm-12 col-md-4" style="margin-top: 10rem;">
-                <h1 class="text-center">Bienvenido a Mercado Proveedores</h1>
-                <p class="text-center">Todo lo que necesites con las mejores opciones</p>
+            <div class="col-sm-12 col-md-5 text-center" style="margin-top: 10rem;">
+                <h1 id="fuente">Bienvenido a</h1>
+                <h1 id="fuente">Mercado Proveedores</h1>
+                <p id="fuente">Todo lo que necesites con las mejores opciones</p>
                 <div style="margin-left: 5rem;">
-                    <a class="btn btn-outline-primary" href="opcion_login">Iniciar Sesión</a>
-                    <a class="btn btn-primary" href="registrarse">Registrarse</a>
                 </div>
                 
             </div>
-            <div class="col-sm-12 col-md-8">
+            <div class="col-sm-12 col-md-7">
                 <img class="logo1" src="{!! asset('imagenes/logo1.png') !!}">
             </div>
         </div>
@@ -26,64 +25,103 @@
     @auth
     <div class="container">
         <div class="row" style="margin-top: 5rem;">
-            <div class="col-sm-12 col-md-4" style="margin-top: 10rem;">
-                <h1 class="text-center">Bienvenido a Mercado Proveedores</h1>
-                <p class="text-center">Todo lo que necesites con las mejores opciones</p>
-                <h4 class="text-center">¡Hola {{Auth::user()->name}}!</h4>
+            <div class="col-sm-12 col-md-5 text-center" style="margin-top: 10rem;">
+                <h1 id="fuente">Bienvenido a Mercado Proveedores</h1>
+                <p id="fuente">Todo lo que necesites con las mejores opciones</p>
+                <h4 id="fuente">¡Hola {{Auth::user()->name}}!</h4>
             </div>
-            <div class="col-sm-12 col-md-8">
+            <div class="col-sm-12 col-md-7">
                 <img class="logo1" src="{!! asset('imagenes/logo1.png') !!}">
             </div>
         </div>
     </div>
     @endauth
 
-    <!-- Contenido -->
-    @include('mensajes')
-    <div>
-        <h1>Botones temporales</h1>
-        <a href="producto" class="btn btn-primary">Ver Productos</a>
-        <a href="producto/create" class="btn btn-primary">Crear Productos</a>
-    </div>
-
-    <div class="container mt-5 mb-5">
-        <div class="row">
-            <div class="card me-2" style="width: 18rem;">
-                <img src="{!! asset('imagenes/prod1.webp') !!}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Polera de Algodón</h5>
-                    <p class="card-text">Esta es la descripcion de la polera de algodon blanca</p>
-                    <a href="producto" class="btn btn-primary">Ver Catalogo</a>
-                </div>
+    <!-- Te Ofrecemos -->
+    <div class="container mt-5">
+        <div class="row text-center">
+            <h1 class="mb-5" style="font-weight: lighter;">Te Ofrecemos</h1>
+            <div class="col">
+                <i class="bi bi-cart3" style="font-size: 4rem;"></i>
+                <h3 style="font-weight: lighter;">PRODUCTOS PARA TI</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus qui. Nihil, molestiae nobis facilis commodi magni dicta, voluptas animi porro eum modi eaque amet rem beatae. Tempora, officia nemo?</p>
             </div>
-            <div class="card me-2" style="width: 18rem;">
-                <img src="{!! asset('imagenes/prod2.webp') !!}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Bebida Coca-Cola</h5>
-                    <p class="card-text">Esta es la descripcion de la bebida coca-cola</p>
-                    <a href="catalogo" class="btn btn-primary">Ver Catalogo</a>
-                </div>
+            <div class="col">
+                <i class="bi bi-box-seam" style="font-size: 4rem;"></i>
+                <h3 style="font-weight: lighter;">GESTIONAMOS TUS COMPRAS</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus qui. Nihil, molestiae nobis facilis commodi magni dicta, voluptas animi porro eum modi eaque amet rem beatae. Tempora, officia nemo?</p>
             </div>
-            <div class="card me-2" style="width: 18rem;">
-                <img src="{!! asset('imagenes/prod3.webp') !!}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Carcasa Iphone 11</h5>
-                    <p class="card-text">Esta es la descripcion de la carcasa del Iphone11</p>
-                    <a href="catalogo" class="btn btn-primary">Ver Catalogo</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="{!! asset('imagenes/prod4.webp') !!}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Hamburguesa</h5>
-                    <p class="card-text">Esta es la descripción de la hamburguesa</p>
-                    <a href="catalogo" class="btn btn-primary">Ver Catalogo</a>
-                </div>
+            <div class="col">
+                <i class="bi bi-truck-flatbed" style="font-size: 4rem;"></i>
+                <h3 style="font-weight: lighter;">ENVÍO A LOCAL</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus qui. Nihil, molestiae nobis facilis commodi magni dicta, voluptas animi porro eum modi eaque amet rem beatae. Tempora, officia nemo?</p>
             </div>
         </div>
     </div>
-    
-    <!-- Fin Contenido -->
+    <!-- Fin Te Ofrecemos -->
+
+    <!-- Carousel con productos -->
+    <div id="carouselExampleControls" class="container carousel slide" data-bs-ride="carousel">
+        <h1 class="text-center mt-5" style="font-weight: lighter;">Productos Disponibles</h1>
+        <div class="carousel-inner">
+            @foreach ( $productos as $producto )
+            <div class="carousel-item {{ $producto['id']==1?'active':'' }}">
+                <img src="{{ asset('storage').'/'.$producto->imagen }}" class="d-block " alt="...">
+                <div class="carousel-caption rounded-pill" id="caption-carousel" >
+                    <h1 style="font-weight: lighter;" id="fuente">{{ $producto['titulo'] }}</h1>
+                    <p id="fuente">{{ $producto['descripcion'] }}</p>
+                </div>
+            </div>
+            @endforeach
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true" id="btn-carousel"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true" id="btn-carousel"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- Fin Carousel con productos -->
+
+    <div id="prob">
+        <div class="container w-50">
+            <h1 class="text-center" id="fuente">Contacto</h1>
+            <form action="" id="fuente" class="row g-2">
+                <div class="col-12">
+                    <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                    <input type="email" class="form-control" require id="exampleFormControlInput1" placeholder="Ingrese su nombre"> 
+                </div>
+                <div class="col-12">
+                    <label for="exampleFormControlInput1" class="form-label">Direccion</label>
+                    <input type="text" class="form-control" require id="exampleFormControlInput1" placeholder="Ingrese su direccion"> 
+                </div>
+                <div class="col-6">
+                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                    <input type="text" class="form-control" require id="exampleFormControlInput1" placeholder="Ingrese su email"> 
+                </div>
+                <div class="col-6">
+                    <label for="exampleFormControlInput1" class="form-label">Telefono</label>
+                    <input type="text" class="form-control" require id="exampleFormControlInput1" placeholder="Ingrese su telefono"> 
+                </div>
+                <div class="col-12">
+                    <label for="exampleFormControlInput1" class="form-label">Asunto</label>
+                    <input type="text" class="form-control" require id="exampleFormControlInput1" placeholder="Ingrese su asunto"> 
+                </div>
+                <div class="col-12">
+                    <label for="exampleFormControlInput1" class="form-label">Mensaje</label>
+                    <textarea class="form-control" cols="30" rows="5"></textarea>
+                </div>
+
+                <div class="col-12 d-flex justify-content-center">
+                    <button class="btn btn-dark">Enviar</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
 
     {{View::make('Templates.footer')}}
 

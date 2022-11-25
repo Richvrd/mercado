@@ -1,3 +1,8 @@
+<?php
+    use App\Models\Producto;
+    $productos = Producto::all();
+?>
+
 @extends('master')
 @section('content')
 
