@@ -137,7 +137,7 @@ class ProductoController extends Controller
             $carrito->user_id = Auth::user()->id;
             $carrito->producto_id = $req->producto_id;
             $carrito->save();
-            return redirect('producto')->with('success','Producto agregado al carrito');
+            return redirect('catalogo')->with('success','Producto agregado al carrito');
         }
         return redirect('/login');
     }

@@ -83,9 +83,14 @@
             <span class="carousel-control-next-icon" aria-hidden="true" id="btn-carousel"></span>
             <span class="visually-hidden">Next</span>
         </button>
+        <div class="d-flex justify-content-center">
+            <a href="catalogo" class="btn btn-success rounded-pill w-25">Ver más productos</a>
+        </div>
+        
     </div>
     <!-- Fin Carousel con productos -->
 
+    <!-- Contacto -->
     <div id="prob">
         <div class="container w-50">
             <h1 class="text-center" id="fuente">Contacto</h1>
@@ -122,6 +127,7 @@
             </form>
         </div>
     </div>
+    <!-- Fin Contacto -->
 
     {{View::make('Templates.footer')}}
 

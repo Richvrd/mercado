@@ -35,8 +35,8 @@
                     <a class="nav-link" href="#">Preguntas Frecuentes</a> -->
                     <div style="margin-right: 5rem;">
                         @guest
-                            <a class="btn btn-outline-primary" href="opcion_login">Iniciar Sesión</a>
-                            <a class="btn btn-primary" href="registrarse">Registrarse</a>
+                            <a class="btn btn-outline-dark" href="opcion_login">Iniciar Sesión</a>
+                            <a class="btn btn-dark" href="registrarse">Registrarse</a>
                         @endguest
                         @auth
                         <a href="/lista_carrito" id="btn-nav" class="bi bi-cart ms-4"><h4 class="d-inline" style="font-weight: lighter;">({{ $total }})</h4></a>

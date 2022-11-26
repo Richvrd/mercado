@@ -70,30 +70,30 @@ Route::get('/admin', function () {
 
 
 // COMPRADOR
-Route::get('admin/compradores', function () {
+Route::get('compradores', function () {
     return view('admin/comprador/compradores');
 });
-Route::get('admin/registrarComp', function () {
+Route::get('registrarComp', function () {
     return view('admin/comprador/registrarComp');
 });
-Route::get('admin/actualizarComp', function () {
+Route::get('actualizarComp', function () {
     return view('admin/comprador/actualizarComp');
 });
-Route::get('admin/eliminarComp', function () {
+Route::get('eliminarComp', function () {
     return view('admin/comprador/eliminarComp');
 });
 
 // PROVEEDOR
-Route::get('admin/proveedores', function () {
+Route::get('proveedores', function () {
     return view('admin/proveedor/proveedores');
 });
-Route::get('admin/registrarProv', function () {
+Route::get('registrarProv', function () {
     return view('admin/proveedor/registrarProv');
 });
-Route::get('admin/actualizarProv', function () {
+Route::get('actualizarProv', function () {
     return view('admin/proveedor/actualizarProv');
 });
-Route::get('admin/eliminarProv', function () {
+Route::get('eliminarProv', function () {
     return view('admin/proveedor/eliminarProv');
 });
 Route::get('/vistaProv', function () {
