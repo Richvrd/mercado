@@ -1,6 +1,8 @@
 <?php
     use App\Models\Producto;
     $productos = Producto::all();
+
+    $r = rand(1,5);
 ?>
 
 @extends('master')
@@ -13,9 +15,8 @@
 <div class="row" id="box-search">
     <div class="thumbnail text-center"> 
         <img class="img-fluid" style="opacity: 0.8;" id="foto" src="{!! asset('imagenes/imagen1.webp') !!}" alt=""> 
-        <div class="caption">
-            <img src="{!! asset('imagenes/logoEmpresa.png') !!}" alt="">
-            <h1 id="fuente" style="color: white;font-size: 5rem;">Todos los productos que necesite</h1>
+        <div class="caption mt-5">
+            <img class="mt-5" src="{!! asset('imagenes/logoEmpresa.png') !!}" alt="">
         </div> 
     </div> 
 </div> 
@@ -24,6 +25,7 @@
 
 <div class="container mt-5 mb-5">
     <div class="d-flex justify-content-center row">
+        <h1 class="text-center mb-5" style="font-weight: lighter;">Productos Disponibles</h1>
         <div class="col-md-10">
             @include('mensajes')
             @foreach ( $productos as $producto )
@@ -32,7 +34,16 @@
                     <div class="col-md-6 mt-1">
                         <h5 id="fuente">{{ $producto['titulo'] }}</h5>
                         <div class="d-flex flex-row">
-                            <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>Cantidad: {{ $producto['cantidad'] }}</span>
+                            <div class="ratings mr-2">
+                                <i class="bi bi-star-fill" style="color: orange;"></i>
+                                <i class="bi bi-star-fill" style="color: orange;"></i>
+                                <i class="bi bi-star-fill" style="color: orange;"></i>
+                                <i class="bi bi-star-fill" style="color: orange;"></i>
+                                <span> {{ $r }} </span>
+                            </div>
+                        </div>
+                        <div class="mt-1 mb-1 spec-1">
+                            <span>Cantidad: {{ $producto['cantidad'] }}</span>
                         </div>
                         <div class="mt-1 mb-1 spec-1">
                             <span>Proveedor: {{$producto['proveedor']}}</span>
@@ -47,6 +58,11 @@
                         <h6 class="text-success">Free shipping</h6>
                         <div class="d-flex flex-column mt-4">
                             <a href="{{url('/producto/'.$producto->id)}}" class="btn btn-outline-primary btn-sm" type="button">Ver Proveedor</a>
+                            <form action="/añadir_carrito" method="POST">
+                                @csrf
+                                <input type="hidden" name="producto_id" value="{{ $producto->id }}">
+                                <button class="btn btn-outline-warning btn-sm mt-2 w-100">Añadir al Carrito</button>
+                            </form>
                         </div>
                     </div>
                 </div>

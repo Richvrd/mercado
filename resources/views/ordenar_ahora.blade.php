@@ -12,11 +12,11 @@
         </tr>
         <tr>
         <td>Impuesto</td>
-        <td>$0</td>
+        <td>$10000</td>
         </tr>
         <tr>
         <td>Envío</td>
-        <td>$10000</td>
+        <td>$0</td>
         </tr>
         <tr>
         <td>Precio Total</td>

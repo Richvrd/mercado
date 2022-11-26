@@ -30,7 +30,15 @@
                         <div class="col-md-6 mt-1">
                             <h5 id="fuente">{{ $producto->titulo }}</h5>
                             <div class="d-flex flex-row">
-                                <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>Cantidad: {{ $producto->cantidad }}</span>
+                                <div class="ratings mr-2">
+                                    <i class="bi bi-star-fill" style="color: orange;"></i>
+                                    <i class="bi bi-star-fill" style="color: orange;"></i>
+                                    <i class="bi bi-star-fill" style="color: orange;"></i>
+                                    <i class="bi bi-star-fill" style="color: orange;"></i>
+                                </div>
+                            </div>
+                            <div class="mt-1 mb-1 spec-1">
+                                <span>Cantidad: {{ $producto->cantidad }}</span>
                             </div>
                             <div class="mt-1 mb-1 spec-1">
                                 <span>Proveedor: {{$producto->proveedor}}</span>
@@ -49,9 +57,14 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="d-flex justify-content-center">
+                    <a href="catalogo" class="btn btn-outline-secondary me-2">Volver</a>
+                    <a href="ordenar_ahora" class="btn btn-success">Ordenar Ahora</a>
+                </div>
             </div>
         </div>
     </div>
+    
     <!-- <div class="container mt-5 mb-5">
         <div class="row">
             @include('mensajes')
