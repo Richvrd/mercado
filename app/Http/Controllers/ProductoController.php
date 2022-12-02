@@ -25,7 +25,7 @@ class ProductoController extends Controller
     }
     public function home()
     {
-        $datos['productos'] = Producto::paginate(5);
+        $datos['productos'] = Producto::paginate(3);
         return view('index',$datos);
     }
 
@@ -36,7 +36,7 @@ class ProductoController extends Controller
      */
     public function create(Request $req)
     {
-        if(Auth::check() && Auth::user()->comp_o_emp==2){
+        if(Auth::check()){
             return view('producto.create');
         }
         return redirect('/');
@@ -82,7 +82,7 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        if(Auth::check() && Auth::user()->comp_o_emp==2){
+        if(Auth::check()){
             $producto = Producto::findOrFail($id);
             return view('producto.edit',compact('producto'));
         }
@@ -119,7 +119,7 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        if(Auth::check() && Auth::user()->comp_o_emp==2){
+        if(Auth::check()){
             $producto = Producto::findOrFail($id);
 
             if(Storage::delete('public/'.$producto->imagen)){

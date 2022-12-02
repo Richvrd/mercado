@@ -28,12 +28,10 @@
             <!-- Grid column -->
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
-            <h6 class="text-uppercase fw-bold">Company name</h6>
+            <h6 class="text-uppercase fw-bold">Mercado Proveedores</h6>
             <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
-            <p>
-                Here you can use rows and columns to organize your footer
-                content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit.
+            <p style="text-align: justify;">
+                Servicio dedicado a unificar los servicios de compra y venta de productos para dueños de locales quienes busquen adquirir mercadería para sus negocios y para aquellos proveedores que busquen comerciar sus productos
             </p>
             </div>
             <!-- Grid column -->
@@ -41,36 +39,36 @@
             <!-- Grid column -->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Products</h6>
+            <h6 class="text-uppercase fw-bold">Productos</h6>
             <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
-            <p><a href="#!" class="text-white">MDBootstrap</a></p>
-            <p><a href="#!" class="text-white">MDWordPress</a></p>
-            <p><a href="#!" class="text-white">BrandFlow</a></p>
-            <p><a href="#!" class="text-white">Bootstrap Angular</a></p>
+            <p><a href="#!" class="text-white">Vestuario</a></p>
+            <p><a href="#!" class="text-white">Tecnología</a></p>
+            <p><a href="#!" class="text-white">Alimentos</a></p>
+            <p><a href="#!" class="text-white">Otros</a></p>
             </div>
             <!-- Grid column -->
 
             <!-- Grid column -->
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <h6 class="text-uppercase fw-bold">Acerca de</h6>
             <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
-            <p><a href="#!" class="text-white">Your Account</a></p>
-            <p><a href="#!" class="text-white">Become an Affiliate</a></p>
-            <p><a href="#!" class="text-white">Shipping Rates</a></p>
-            <p><a href="#!" class="text-white">Help</a></p>
+            <p><a href="#" class="text-white">Quienes Somos</a></p>
+            <p><a href="#" class="text-white">Preguntas Frecuentes</a></p>
+            <p><a href="#" class="text-white">Proveedores</a></p>
+            <p><a href="#" class="text-white">Ayuda</a></p>
             </div>
             <!-- Grid column -->
 
             <!-- Grid column -->
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <h6 class="text-uppercase fw-bold">Contacto</h6>
             <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
-            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
-            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+            <p><i class="fas fa-home mr-3"></i> Talca, Chile</p>
+            <p><i class="fas fa-envelope mr-3"></i> mercadoprov@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 56 91938123</p>
+            <p><i class="fas fa-print mr-3"></i> + 56 99451344</p>
             </div>
             <!-- Grid column -->
         </div>
@@ -81,8 +79,8 @@
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        
+        <p>© 2020 Copyright: Mercado Proveedores</p>
     </div>
     <!-- Copyright -->
     </footer>

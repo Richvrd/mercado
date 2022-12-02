@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('telefono');
             $table->string('direccion');
             $table->string('productos_a_comerciar');
-            $table->string('comp_o_emp');
+            // $table->string('comp_o_emp');
             $table->timestamps();
         });
     }

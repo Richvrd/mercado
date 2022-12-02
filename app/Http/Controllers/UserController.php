@@ -11,12 +11,4 @@ class UserController extends Controller
     public function show(){
         return view('perfil');
     }
-    // public function edit($id)
-    // {
-    //     if(Auth::check()){
-    //         $usuario = Auth::user()->id;
-    //         return view('perfil',$usuario);
-    //     }
-    //     return redirect('/');
-    // }
 }
